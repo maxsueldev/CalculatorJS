@@ -31,13 +31,11 @@ function checkIsOn() {
 
 function ceFunction() {
     if(checkIsOn()) {
-        screenText.textContent = "test";
+        screenText.textContent = 0;
     }
 }
 
 
-
-// console.log(isOn);
 
 onOff.addEventListener("click", toogleOnOff);
 ce.addEventListener("click", ceFunction);
