@@ -10,7 +10,7 @@ function toogleOnOff() {
         screenText.textContent = "";
     } else {
         isOn = true;
-        screenText.textContent = "0";
+        screenText.textContent = 0;
     }
 }
 
