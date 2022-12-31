@@ -18,10 +18,22 @@
     margin: 25px auto 40px;
 }
 
+button {
+    cursor: pointer;
+}
+
+.buttons-top button {
+    margin-right: 15px;
+}
+
 button.on-off {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    cursor: pointer;
     margin-left: 50px;
+}
+
+button.top-others {
+    padding: 5px 12px;
+    border-radius: 80%;
 }
