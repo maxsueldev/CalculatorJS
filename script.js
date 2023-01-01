@@ -23,9 +23,7 @@ function checkIsOn() {
 }
 
 function ceFunction() {
-    if(checkIsOn()) {
-        screenText.textContent = 0;
-    }
+    
 }
 
 onC.addEventListener("click", toogleOnClear);
