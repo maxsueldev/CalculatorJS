@@ -1,32 +1,33 @@
 .box-out {
-    width: 500px;
+    width: 320px;
     height: 500px;
-    background-color: #808080;
+    background-color: #262118;
     border-radius: 2.5rem;
     overflow: auto;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 
 .screen {
-    width: 410px;
-    height: 100px;
-    background-color: #E0FFFF;
+    width: 210px;
+    height: 50px;
+    background-color: #8EE69B;
     border: 2px solid red;
     border-radius: 2.5rem; 
     text-align: center;
-    padding: 10px 20px 0 20px;
+    padding: 0 20px 10px;
     margin: 25px auto 20px;
 }
 
 .screen h1 {
-    font-size: 70px;
+    font-size: 50px;
     color: red;
-    padding-top: 5px;
+    padding: 0;
     margin: 0;  
 }
 
 .buttons-calc {
-    padding: 0 30px;
+    padding: 0;
+    margin: 0 15px;
 }
 
 button {
@@ -34,15 +35,19 @@ button {
     border: 1px solid red;
 }
 
-.buttons-top button {
-    margin-right: 15px;
+.buttons-calc {
+    padding: 0 5px;
 }
 
-button.on-off {
-    width: 60px;
-    height: 60px;
+.buttons-top button {
+    margin-right: 5px;
+}
+
+button.onC {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    margin-left: 60px;
+    margin-left: 0px;
 }
 
 button.top-btn-others {

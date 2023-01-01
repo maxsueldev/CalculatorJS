@@ -3,22 +3,15 @@ let isOn = false;
 const screen = document.querySelector(".screen");
 const screenText = screen.querySelector("h1");
 
-// const buttons = document.querySelectorAll("button");
-// const onOff = buttons.querySelector(".on-off");
-
-const onOff = document.querySelector("button.on-off");
+const onC = document.querySelector("button.onC");
 const ce = document.querySelector("button.ce");
 
-function toogleOnOff() {
-    if(isOn) {
-        isOn = false;
-        screenText.textContent = "";
-        // console.log(isOn);
-    } else {
+function toogleOnClear() {  // On ou Clear
+  // Se estiver desligada, liga. Se estiver ligada, zera.
+    if(!isOn) {
         isOn = true;
-        screenText.textContent = 0;
-        // console.log(isOn);
-    }
+    } 
+    screenText.textContent = 0;
     return isOn;
 }
 
@@ -35,7 +28,5 @@ function ceFunction() {
     }
 }
 
-
-
-onOff.addEventListener("click", toogleOnOff);
+onC.addEventListener("click", toogleOnClear);
 ce.addEventListener("click", ceFunction);
