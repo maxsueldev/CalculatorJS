@@ -33,6 +33,6 @@ git clone git@github.com:maxsueldev/CalculatorJS.git
 <br>
 
 ## Autor
-Maxsuel Fernando
+Maxsuel Santos
 
 <https://www.linkedin.com/in/maxsuelfernandob/>
