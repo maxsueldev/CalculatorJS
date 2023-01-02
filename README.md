@@ -5,13 +5,13 @@
 
 ## Sobre o projeto
 
-CalculatorJS é uma calculadora que usa elementos da DOM para realizar cálculos básicos, assim como uma calculadora de bolso comum. 
+CalculatorJS é uma calculadora que usa elementos da Dom para realizar cálculos básicos, assim como uma calculadora de bolso comum. 
 
 <br>
 
-### Layout Web
+### Layout Console
 
-![Print screen CalculatorJS](img/print1.png)
+![Print screen C'alculatorJS](img/print1.png)
 
 <br>
 
@@ -33,6 +33,6 @@ git clone git@github.com:maxsueldev/CalculatorJS.git
 <br>
 
 ## Autor
-Maxsuel Fernando B. A. Santos
+Maxsuel Fernando
 
 <https://www.linkedin.com/in/maxsuelfernandob/>
