@@ -11,46 +11,46 @@
     width: 210px;
     height: 50px;
     background-color: #8EE69B;
-    border: 2px solid red;
+    border: 3px solid red;
     border-radius: 2.5rem; 
     text-align: center;
     padding: 0 20px 10px;
-    margin: 25px auto 20px;
+    margin: 25px auto;
 }
 
 .screen h1 {
     font-size: 50px;
     color: red;
-    padding: 0;
     margin: 0;  
 }
 
-.buttons-calc {
-    padding: 0;
+/* .buttons-calc {
     margin: 0 15px;
-}
+} */
 
 button {
     cursor: pointer;
-    border: 1px solid red;
+    border: 1px solid #8EE69B;
 }
 
 .buttons-calc {
-    padding: 0 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons-top button {
-    margin-right: 5px;
+    margin: 0 3px;
 }
 
 button.onC {
-    width: 50px;
-    height: 50px;
+    width: 43px;
+    height: 43px;
     border-radius: 50%;
-    margin-left: 0px;
 }
 
 button.top-btn-others {
-    padding: 5px 12px;
+    padding: 3px 8px;
     border-radius: 80%;
 }
