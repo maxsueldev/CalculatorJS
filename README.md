@@ -5,7 +5,7 @@
 
 ## Sobre o projeto
 
-CalculatorJS é uma calculadora que usa elementos da Dom para realizar cálculos básicos, assim como uma calculadora de bolso comum. 
+CalculatorJS é uma calculadora que usa elementos da DOM para realizar cálculos básicos, assim como uma calculadora de bolso comum. 
 
 <br>
 
