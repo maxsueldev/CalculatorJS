@@ -11,7 +11,7 @@ CalculatorJS é uma calculadora que usa elementos da Dom para realizar cálculos
 
 ### Layout Console
 
-![Print screen C'alculatorJS](img/print1.png)
+![Print screen CalculatorJS](img/print1.png)
 
 <br>
 
