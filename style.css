@@ -15,7 +15,7 @@
     border-radius: 2.5rem; 
     text-align: center;
     padding: 0 20px 10px;
-    margin: 25px auto;
+    margin: 40px auto;
 }
 
 .screen h1 {
@@ -35,13 +35,18 @@ button {
 
 .buttons-calc {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .buttons-top button {
-    margin: 0 3px;
+    margin: 0 3px;  
+}
+
+.buttons-bottom button {
+    padding: 7px 16px;
+    margin: 12px 8px;
 }
 
 button.onC {
