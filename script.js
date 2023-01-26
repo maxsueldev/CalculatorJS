@@ -1,3 +1,5 @@
+"use strict"
+
 let isOn = false;
 
 const screen = document.querySelector(".screen");
@@ -56,8 +58,5 @@ btnOff.addEventListener("click", offFunction);
 onC.addEventListener("click", toogleOnClear);
 ce.addEventListener("click", ceFunction);
 
-btns.addEventListener("click", function(event){
-    console.log(event);
-});
 
 window.addEventListener("load", registerEvents);
