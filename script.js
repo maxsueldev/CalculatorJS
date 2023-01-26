@@ -8,21 +8,19 @@ const screenText = screen.querySelector("h1");
 const onC = document.querySelector("button.onC");
 const ce = document.querySelector("button.ce");
 const btnOff = document.querySelector("button.btnOff");
-console.log(btnOff);
 
-// console.log(buttonsCalc);
+//operacoes simples
+const sum = document.querySelector("button.sum");
+const sub = document.querySelector("button.sub");
+const mult = document.querySelector("button.mult");
+const division = document.querySelector("button.division");
 
-// Pegar todos os botoes da calculadora
-const buttonsCalc = document.querySelectorAll("button");
-
-const btns = [...buttonsCalc];
-console.log(btns);
-
-
+// Pegar todos os botoes de numeros da calculadora
+const buttonsNum = document.querySelectorAll("button.num");
     
 function toogleOnClear() {  // On ou Clear
   // Se estiver desligada, liga. Se estiver ligada, zera.
-    if(!isOn) {
+    if(!checkIsOn()) {
         isOn = true;
     } 
     screenText.textContent = 0;
@@ -45,18 +43,53 @@ function ceFunction() {
     
 }
 
-function registerEvents(event) {
-    buttonsCalc.forEach(element => {
-        
-    });
+function addNumberToScreen(event) {
+    if(checkIsOn()) {
+        if(screenText.textContent.length == 8) {  // Quantidade máxima de números na Calculadora
+            return;  
+        }
+        const keyCode = getKeyCode(event);
+        const key = document.querySelector(`button.num[data-key = "${keyCode}"]`);
+    
+        if(!key) {
+            return;
+        }
+
+        if(screenText.textContent == 0) {
+            screenText.textContent = key.textContent;
+        } else {
+            screenText.textContent += key.textContent;
+        }
+    } 
 }
 
+function getKeyCode(event) {
+    let keyCode;
+    
+    if(event.type == "keydown") {
+        keyCode = event.keyCode;
+    } else {
+        keyCode = event.target.dataset.key;
+    }
+    return keyCode;
+}
 
+function sumValues(firstValue) {
+    
+}
 
-// Fazer um map para percorrer os botoes de numeros
-btnOff.addEventListener("click", offFunction);
-onC.addEventListener("click", toogleOnClear);
-ce.addEventListener("click", ceFunction);
+function registerEvents() {
+    buttonsNum.forEach(element => {
+        element.addEventListener("click", addNumberToScreen);
+    });
 
+    window.addEventListener("keydown", addNumberToScreen);
+
+    sum.addEventListener("click", sumValues);
+
+    btnOff.addEventListener("click", offFunction);
+    onC.addEventListener("click", toogleOnClear);
+    ce.addEventListener("click", ceFunction);
+}
 
 window.addEventListener("load", registerEvents);

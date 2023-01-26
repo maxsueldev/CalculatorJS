@@ -59,3 +59,8 @@ button.top-btn-others {
     padding: 3px 8px;
     border-radius: 80%;
 }
+
+button.sum {
+    position: absolute;
+    padding: 35px 18px;
+}
