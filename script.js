@@ -26,8 +26,11 @@ const mult = document.querySelector("button.mult");
 const division = document.querySelector("button.division");
 
 //Outras operacoes
-const square = document.querySelector("button.square");
+const sqrt = document.querySelector("button.square");
 const percent = document.querySelector("button.percent");
+
+const dot = document.querySelector("button.dot");
+const equal = document.querySelector("button.equal");
 
 // Pegar todos os botoes de numeros da calculadora
 const buttonsNum = document.querySelectorAll("button.num");
@@ -61,10 +64,6 @@ function offFunction() {
     currentOtherValue = 1;
 }
 
-function ceFunction() {
-    
-}
-
 function addNumberToScreen(event) {
     if(checkIsOn()) {
         if(screenText.textContent.length == 8) {  // Quantidade máxima de números na Calculadora
@@ -94,6 +93,17 @@ function getKeyCode(event) {
         keyCode = event.target.dataset.key;
     }
     return keyCode;
+}
+
+function addDot() {
+    if(screenText.textContent.includes(".") || screenText.textContent == "") {
+        return;
+    }
+    screenText.textContent += ".";
+}
+
+function equalFunction() {
+    screenText.textContent = Number(screenText.textContent) + Number(currentValue);
 }
 
 function operateValues(event) {
@@ -135,9 +145,12 @@ function registerEvents() {
     mult.addEventListener("click", operateValues);
     division.addEventListener("click", operateValues);
 
-    square.addEventListener("click", sqrtFunction);
+    sqrt.addEventListener("click", sqrtFunction);
 
     btnOff.addEventListener("click", offFunction);
+    dot.addEventListener("click", addDot);
+    equal.addEventListener("click", equalFunction);
+
     onC.addEventListener("click", toogleOnClear);
     ce.addEventListener("click", ceFunction);
 }
