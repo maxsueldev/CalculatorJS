@@ -88,30 +88,15 @@ function operateValues(event) {
         if(keyOperator == "+") {
             currentValue += Number(screenText.textContent);
             currentOperator = "+";
+            screenPrevious.textContent = `${currentValue} ${currentOperator}`;
         } else if(keyOperator == "x") {
             currentOtherValue *= Number(screenText.textContent);
-            console.log(currentOtherValue);
             currentOperator = "x";
+            screenPrevious.textContent = `${currentOtherValue} ${currentOperator}`;
         }
-        if(currentOtherValue !== 1) currentValue = currentOtherValue;
 
         screenText.textContent = '';
-        screenPrevious.textContent = `${currentValue} ${currentOperator}`;
     };
-}
-
-function sumValues() {
-    currentValue += Number(screenText.textContent);
-    currentOperator = "+";
-    screenText.textContent = '';
-    screenPrevious.textContent = `${currentValue} ${currentOperator}`;
-}
-
-function multiplicateValues() {
-    currentValue *= Number(screenText.textContent);
-    currentOperator = "*";
-    screenText.textContent = '';
-    screenPrevious.textContent = `${currentValue} ${currentOperator}`;
 }
 
 function registerEvents() {
