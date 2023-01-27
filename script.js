@@ -1,15 +1,18 @@
 "use strict"
 
 let isOn = false;
+let currentValue = 0;
+let currentOperator;
 
 const screen = document.querySelector(".screen");
 const screenText = screen.querySelector("h1");
+const screenPrevious = screen.querySelector("p");
 
 const onC = document.querySelector("button.onC");
 const ce = document.querySelector("button.ce");
 const btnOff = document.querySelector("button.btnOff");
 
-//operacoes simples
+//btns de operacoes simples
 const sum = document.querySelector("button.sum");
 const sub = document.querySelector("button.sub");
 const mult = document.querySelector("button.mult");
@@ -24,6 +27,8 @@ function toogleOnClear() {  // On ou Clear
         isOn = true;
     } 
     screenText.textContent = 0;
+    currentValue = 0;
+    
     return isOn;
 } 
 
@@ -74,8 +79,23 @@ function getKeyCode(event) {
     return keyCode;
 }
 
-function sumValues(firstValue) {
-    
+// function operateValues() {
+//     currentValue
+//     currentOperator
+// }
+
+function sumValues() {
+    currentValue += Number(screenText.textContent);
+    currentOperator = "+";
+    screenText.textContent = '';
+    screenPrevious.textContent = `${currentValue} ${currentOperator}`;
+}
+
+function multiplicateValues() {
+    currentValue *= Number(screenText.textContent);
+    currentOperator = "*";
+    screenText.textContent = '';
+    screenPrevious.textContent = `${currentValue} ${currentOperator}`;
 }
 
 function registerEvents() {
@@ -86,6 +106,7 @@ function registerEvents() {
     window.addEventListener("keydown", addNumberToScreen);
 
     sum.addEventListener("click", sumValues);
+    mult.addEventListener("click", multiplicateValues);
 
     btnOff.addEventListener("click", offFunction);
     onC.addEventListener("click", toogleOnClear);
