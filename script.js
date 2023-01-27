@@ -49,6 +49,12 @@ function toogleOnClear() {  // On ou Clear
     return isOn;
 } 
 
+function ceFunction() {
+    if(checkIsOn()) {
+        screenText.textContent = 0;
+    }
+}
+
 function checkIsOn() {
     if(!isOn) {
         return;
@@ -133,6 +139,12 @@ function sqrtFunction() {
     screenText.textContent = Math.sqrt(currentValue);
 }
 
+function percentFunction() {
+    currentValue = Number(screenText.textContent);
+    screenText.textContent = currentValue / 100;
+
+}
+
 function registerEvents() {
     buttonsNum.forEach(element => {
         element.addEventListener("click", addNumberToScreen);
@@ -146,6 +158,7 @@ function registerEvents() {
     division.addEventListener("click", operateValues);
 
     sqrt.addEventListener("click", sqrtFunction);
+    percent.addEventListener("click", percentFunction);
 
     btnOff.addEventListener("click", offFunction);
     dot.addEventListener("click", addDot);
