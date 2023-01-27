@@ -1,16 +1,22 @@
-"use strict"
+"use strict"   //using strict mode
 
 let isOn = false;
 let currentValue = 0;
 let currentOtherValue = 1;
-let currentOperator;
+// let currentOperator;
 
+//screen
 const screen = document.querySelector(".screen");
 const screenText = screen.querySelector("h1");
 const screenPrevious = screen.querySelector("p");
 
+//top buttons
 const onC = document.querySelector("button.onC");
 const ce = document.querySelector("button.ce");
+const mrc = document.querySelector("button.mrc");
+const mLess = document.querySelector("button.mLess");
+const mPlus = document.querySelector("button.mPlus");
+
 const btnOff = document.querySelector("button.btnOff");
 
 //btns de operacoes simples
@@ -18,6 +24,10 @@ const sum = document.querySelector("button.sum");
 const sub = document.querySelector("button.sub");
 const mult = document.querySelector("button.mult");
 const division = document.querySelector("button.division");
+
+//Outras operacoes
+const square = document.querySelector("button.square");
+const percent = document.querySelector("button.percent");
 
 // Pegar todos os botoes de numeros da calculadora
 const buttonsNum = document.querySelectorAll("button.num");
@@ -29,7 +39,7 @@ function toogleOnClear() {  // On ou Clear
     } 
     currentValue = 0;
     currentOtherValue = 1;
-    
+
     screenText.textContent = 0;
     screenPrevious.textContent = "";
 
@@ -108,6 +118,11 @@ function operateValues(event) {
     };
 }
 
+function sqrtFunction() {
+    currentValue = Number(screenText.textContent);
+    screenText.textContent = Math.sqrt(currentValue);
+}
+
 function registerEvents() {
     buttonsNum.forEach(element => {
         element.addEventListener("click", addNumberToScreen);
@@ -119,6 +134,8 @@ function registerEvents() {
     sub.addEventListener("click", operateValues);
     mult.addEventListener("click", operateValues);
     division.addEventListener("click", operateValues);
+
+    square.addEventListener("click", sqrtFunction);
 
     btnOff.addEventListener("click", offFunction);
     onC.addEventListener("click", toogleOnClear);
