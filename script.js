@@ -28,6 +28,8 @@ function toogleOnClear() {  // On ou Clear
         isOn = true;
     } 
     currentValue = 0;
+    currentOtherValue = 1;
+    
     screenText.textContent = 0;
     screenPrevious.textContent = "";
 
@@ -45,6 +47,8 @@ function offFunction() {
     isOn = false;
     screenText.textContent = "";
     screenPrevious.textContent = "";
+    currentValue = 0;
+    currentOtherValue = 1;
 }
 
 function ceFunction() {
@@ -85,14 +89,19 @@ function getKeyCode(event) {
 function operateValues(event) {
     if(checkIsOn) {
         let keyOperator = event.target.textContent; 
+        
         if(keyOperator == "+") {
             currentValue += Number(screenText.textContent);
-            currentOperator = "+";
-            screenPrevious.textContent = `${currentValue} ${currentOperator}`;
+            screenPrevious.textContent = `${currentValue} ${keyOperator}`;
+        } else if(keyOperator == "-") {
+            currentValue -= Number(screenText.textContent);
+            screenPrevious.textContent = `${currentValue} ${keyOperator}`;
         } else if(keyOperator == "x") {
             currentOtherValue *= Number(screenText.textContent);
-            currentOperator = "x";
-            screenPrevious.textContent = `${currentOtherValue} ${currentOperator}`;
+            screenPrevious.textContent = `${currentOtherValue} ${keyOperator}`;
+        } else if(keyOperator == "÷") {
+            currentOtherValue /= Number(screenText.textContent);
+            screenPrevious.textContent = `${currentOtherValue} ${keyOperator}`;
         }
 
         screenText.textContent = '';
@@ -107,7 +116,9 @@ function registerEvents() {
     window.addEventListener("keydown", addNumberToScreen);
 
     sum.addEventListener("click", operateValues);
+    sub.addEventListener("click", operateValues);
     mult.addEventListener("click", operateValues);
+    division.addEventListener("click", operateValues);
 
     btnOff.addEventListener("click", offFunction);
     onC.addEventListener("click", toogleOnClear);
